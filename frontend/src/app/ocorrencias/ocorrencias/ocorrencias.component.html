@@ -1,1 +1,19 @@
-<p>ocorrencias works!</p>
+<div className="marge">
+  <mat-card>
+    <mat-card-subtitle>
+      Consulta de Exames de Mamografia - Relação Regiões.
+    </mat-card-subtitle>
+    <table matSort (matSortChange)="(regioes)">
+      <tr>
+        <th mat-sort-header="Id">Id</th>
+        <th mat-sort-header="Regiao">Regiao</th>
+        <th mat-sort-header="Total de Exames">Total de Exames</th>
+      </tr>
+      <tr *ngFor="let dessert of regioes">
+        <td>{{ dessert.id }}</td>
+        <td>{{ dessert.regiao }}</td>
+        <td>{{ dessert.total_exames }}</td>
+      </tr>
+    </table>
+  </mat-card>
+</div>

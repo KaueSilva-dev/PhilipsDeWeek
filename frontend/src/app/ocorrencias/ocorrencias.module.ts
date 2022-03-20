@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatSortModule } from '@angular/material/sort';
+import { OcorrenciasRoutingModule } from './ocorrencias-routing.module';
 import { OcorrenciasComponent } from './ocorrencias/ocorrencias.component';
-
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [
-    OcorrenciasComponent
-  ],
+  declarations: [OcorrenciasComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    OcorrenciasRoutingModule,
+    MatSortModule,
+    MatCardModule,
+  ],
 })
-export class OcorrenciasModule { }
+export class OcorrenciasModule {}
