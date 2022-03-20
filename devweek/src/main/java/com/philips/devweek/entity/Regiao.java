@@ -1,10 +1,10 @@
 package com.philips.devweek.entity;
 import javax.persistence.*;
-@Entity;
+@Entity
 public class Regiao {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO);
-    @Column(nullable = false);
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false)
     private Long id;
     private String regiao;
     private Long quantidade_exames;

@@ -3,10 +3,12 @@ package com.philips.devweek;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.sql.SQLException;
+
 @SpringBootApplication
 public class DevweekApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)throws SQLException {
 		SpringApplication.run(DevweekApplication.class, args);
 	}
 
