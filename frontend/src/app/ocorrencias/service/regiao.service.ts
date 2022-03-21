@@ -9,8 +9,8 @@ import { Regiao } from '../model/regiao';
 export class RegiaoService {
   constructor(private http: HttpClient) {}
 
-  listRegioes(): Observable<Regiao[]> {
-    const url = '/api/regioes';
+  listRegiao(): Observable<Regiao[]> {
+    const url = '/api/regiao';
     return this.http.get<Regiao[]>(url);
   }
 }

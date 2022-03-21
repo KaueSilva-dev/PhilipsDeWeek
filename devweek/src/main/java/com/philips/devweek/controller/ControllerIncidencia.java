@@ -1,7 +1,7 @@
 package com.philips.devweek.controller;
 
 import com.philips.devweek.entity.FaixaEtaria;
-import com.philips.devweek.entity.Incidencia;
+import com.philips.devweek.entity.IncidenciaExame;
 import com.philips.devweek.repository.IncidenciaRepo;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api")
 public class ControllerIncidencia {
     private IncidenciaRepo iRepository;
 
@@ -20,7 +21,7 @@ public class ControllerIncidencia {
 
     @GetMapping("/incidencia")
     public ResponseEntity<?> FindAllincidencia() {
-            List<Incidencia> lista = iRepository.findAll();
+            List<IncidenciaExame> lista = iRepository.findAll();
             if (lista.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
@@ -28,15 +29,15 @@ public class ControllerIncidencia {
     }
     @GetMapping("/incidencia/{id}")
     public ResponseEntity<?>FindByIdIncidencia(@PathVariable long id) {
-        Optional<Incidencia> unidOption = iRepository.findById(id);
+        Optional<IncidenciaExame> unidOption = iRepository.findById(id);
         if (unidOption.isPresent()) {
-            Incidencia incidenciaUnid = unidOption.get();
+            IncidenciaExame incidenciaUnid = unidOption.get();
             return new ResponseEntity<>(incidenciaUnid, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     @PostMapping("/incidencia/novo")
-    public Incidencia postIncidencia(@RequestBody Incidencia newIncidencia){
+    public IncidenciaExame postIncidencia(@RequestBody IncidenciaExame newIncidencia){
         return iRepository.save(newIncidencia);
     }
     @DeleteMapping("/incidencia/delete/{id}")

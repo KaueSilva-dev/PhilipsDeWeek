@@ -1,9 +1,9 @@
 package com.philips.devweek.entity;
 import javax.persistence.*;
 @Entity
-public class Incidencia {
+public class IncidenciaExame {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(nullable = false)
     private Long id;
     private Integer regiao_id;
@@ -11,9 +11,9 @@ public class Incidencia {
     private Long faixa_id;
     private Integer qnt_exames;
 
-    public Incidencia(){}
+    public IncidenciaExame(){}
 
-    public Incidencia(Integer regiao_id, Integer mes, Long faixa_id, Integer qnt_exames) {
+    public IncidenciaExame(Integer regiao_id, Integer mes, Long faixa_id, Integer qnt_exames) {
         this.regiao_id = regiao_id;
         this.mes = mes;
         this.faixa_id = faixa_id;
